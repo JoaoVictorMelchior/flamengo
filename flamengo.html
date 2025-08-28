@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Flamengo</title>
+    <style>
+        body {
+            background-color: #000; /* preto */
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1, h2, h3 {
+            color: #FF0000; /* vermelho */
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+        }
+        td {
+            border: 1px solid white;
+            padding: 10px;
+        }
+        button {
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            width: 80%;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        a {
+            color: #FF0000;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            max-width: 100%;
+            margin-top: 10px;
+            border: 2px solid #FF0000;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- Cabeçalho -->
+        <tr height="100">
+            <td colspan="3" align="center">
+                <h1>Clube de Regatas do Flamengo</h1>
+            </td>
+        </tr>
+
+        <!-- Menu | Conteúdo | Links externos -->
+        <tr height="400">
+            <!-- Menu -->
+            <td width="20%" valign="top" align="center">
+                <h3>Menu</h3>
+                <button onclick="mostrar('historia')">História</button><br>
+                <button onclick="mostrar('titulos')">Títulos</button><br>
+                <button onclick="mostrar('idolos')">Ídolos</button><br>
+            </td>
+
+            <!-- Conteúdo -->
+            <td width="60%" valign="top">
+                <div id="conteudo">
+                    <h2>Bem-vindo!</h2>
+                    <p>Esse é o site sobre o Flamengo. Use o menu para navegar.</p>
+                    <img src="flamengo.webp" alt="Escudo do Flamengo">
+                </div>
+            </td>
+
+            <!-- Links Externos -->
+            <td width="20%" valign="top" align="center">
+                <h3>Links Externos</h3>
+                <a href="https://www.flamengo.com.br" target="_blank">Site Oficial</a><br><br>
+                <a href="https://ge.globo.com/futebol/times/flamengo/" target="_blank">Notícias GE</a><br><br>
+                <a href="https://pt.wikipedia.org/wiki/Clube_de_Regatas_do_Flamengo" target="_blank">Wikipedia</a>
+            </td>
+        </tr>
+
+        <!-- Rodapé -->
+        <tr height="50">
+            <td colspan="3" align="center">
+                <small>&copy; 2025 - Site feito por João Victor Melchior</small>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function mostrar(secao) {
+            let conteudo = document.getElementById("conteudo");
+
+            if (secao === "historia") {
+                conteudo.innerHTML = `
+                    <h2>História</h2>
+                    <p>O Flamengo foi fundado em 1895, no Rio de Janeiro, inicialmente como um clube de remo. 
+                    Seu departamento de futebol foi criado em 1911 e desde então se tornou um dos maiores clubes do Brasil e do mundo.</p>
+                    <img src="time.webp" alt="Time do Flamengo">
+                `;
+            } 
+            else if (secao === "titulos") {
+                conteudo.innerHTML = `
+                    <h2>Títulos</h2>
+                    <ul>
+                        <li>Mundial de Clubes - 1981</li>
+                        <li>Libertadores - 1981, 2019, 2022</li>
+                        <li>Brasileirão - 8 vezes</li>
+                        <li>Copa do Brasil - 4 vezes</li>
+                    </ul>
+                    <img src="titulos.webp" alt="Flamengo campeão da Libertadores">
+                `;
+            } 
+            else if (secao === "idolos") {
+                conteudo.innerHTML = `
+                    <h2>Ídolos</h2>
+                    <p>Ídolos do Flamengo: Zico, Júnior, Leandro, Adriano Imperador, Gabigol, Bruno Henrique e Arrascaeta.</p>
+                    <img src="idolos.webp" alt="Zico ídolo do Flamengo">
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
